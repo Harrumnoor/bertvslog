@@ -3,8 +3,8 @@ import json
 import sqlite3
 
 # File paths
-correct_file = 'correct-merged.json'
-incorrect_file = 'incorrect_merged.json'
+correct_file = 'correct.json'
+incorrect_file = 'incorrect.json'
 failed_queries_file = 'failed_queries.json'
 
 # Load queries from files
