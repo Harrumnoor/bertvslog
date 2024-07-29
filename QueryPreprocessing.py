@@ -55,7 +55,7 @@ def fetch_sample_values(db_id):
 
     return sample_values
 
-# Preprocess the query to replace 'value' with sample values or appropriate defaults
+# Preprocess to handle errors
 def preprocess_query(query, sample_values):
     query = query.replace("limit value", "LIMIT 1")
     query = query.replace("> = value", ">= 2")  # Default value for counts or numbers
@@ -74,7 +74,6 @@ def preprocess_query(query, sample_values):
             query = query.replace("value", str(sample_value))
     return query
 
-# Run a single query and return the error if it fails
 def run_query(query_info):
     db_id = query_info.get('db_id')
     query = query_info.get('query')
